@@ -47,7 +47,7 @@ echo $b;
 
 echo "<br>";
 function test2(){
-	static $value_ = 365;
+	static $value_ = 365;#static关键词和c++差不多
 	echo $value_;
 	$value_++; 
 	}
