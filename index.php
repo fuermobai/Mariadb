@@ -37,7 +37,11 @@ $a = 1;
 $b = 2;
 
 function test1(){
-	$GLOBALS['b'] = $GLOBALS['a'] + $GLOBALS['b'];
+	//$GLOBALS['b'] = $GLOBALS['a'] + $GLOBALS['b'];
+	global $a,$b;
+	$b = $a + $b;
+	echo "现在可以用global输出全局变量而不需要放到函数中去了 ;";
+	echo "<br>";
 	}
 echo "<br>";
 test1();
@@ -60,11 +64,114 @@ test2();
 echo "<br>";
 test2();
 echo "<br>";
-test2();//不删除不代表变量至不变- -。
+test2();//不删除不代表变量至不变- -.
+
+echo "<h1>PHP is fun!</h1>";
+echo "<h2>Hello world!</h2>";
+echo "I'm about to learn PHP!<br>";
+echo "This", " string", " was", " made", " with multiple parameters.";
+
+$txt1="Learn PHP";
+$txt2="W3School.com.cn";
+//$cars=array("Volvo","BMW","SAAB");
+
+echo $txt1;
+echo "<br>";
+echo "Study PHP at $txt2<br>";
+
+//注释： 循环
+echo "<h3>循环</h3>";
+
+function cycles(){
+	$cars=array("Volvo","BMW","SAAB");
+	static $numbers = 0;//修改为static后，输出就是三个不同的，改回来后就是相同的，很奇怪
+	echo "My car is a $cars[$numbers]";
+	$numbers++;//缺少一个选择控制，当numbers大于3时，输出为空
+	echo "<br>";//教程中的换行符是：PHP_EOL，但是没有换行效果
+}
+
+cycles();
+cycles();
+cycles();
+cycles();
+
+//注释： 参数作用域
+function test3($xx)
+{
+	echo $xx;
+}
+test3($x/2);
+echo PHP_EOL;
+test3(3154);
+
+echo "<h2>这是一个","字符串，(这个逗号是中文的逗号) ","使用了","多个","参数。</h2>";
+
+$name = "runoob";
+$c = <<< EEE
+			\n\t
+			"abc"=$name<br><a>html格式</a><br/>
+			"123"
+EEE;
+echo $c;
+
+$x11 = 5985;
+var_dump($x11);
+echo "<br>";
+$x2 = -345;
+var_dump($x2);
+echo "<br>";
+$x3 = 0x8C;
+var_dump($x3);
+echo "<br>";
+$x4 = 047;
+var_dump($x4);
+echo "<br>";
+var_dump("是");
+echo "<br>";
+var_dump(2.4e3);
+echo "<br>";
+var_dump(8E-5);//这个表达方式没有变化，可能技校数的表达，什么语言都差不多;
+echo "<br>";
+var_dump(array("Volvo","BMW","Toyota"));
+echo "<br>";
+print_r(array("Volvo","BMW","toyota"));
+echo "<br>";
+class Car
+{
+	var $Color;
+	function __construct($Color = "green"){
+		$this -> Color = Color;
+	}
+	function what_color(){
+		return $this -> Color;
+	}
+}
+
+define("myname","Porco Rosso",$case_insensitive = true);
+echo MYName;//输出时，并没有$符号;
+echo "<br>";
+define("Myname","Mobai",$case_insensitive = false);
+echo Myname;
+echo "<br>";
+echo MyName;
+echo "<br>";
+function outname()
+{
+	echo myname;
+	echo "<br>";
+	echo Myname;
+	echo "<br>";
+	echo MyName;
+	echo "<br>";
+}
+outname();
+ $txt1 = "hello";
+ $txt2 = "world";
+ echo $txt1,$txt2;
+ echo "<br>";
+ echo $txt1."+".$txt2;
 
 
 ?>
-
-
 </body>
 </html>
