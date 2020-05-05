@@ -165,13 +165,73 @@ function outname()
 	echo "<br>";
 }
 outname();
- $txt1 = "hello";
- $txt2 = "world";
- echo $txt1,$txt2;
- echo "<br>";
- echo $txt1."+".$txt2;
+$txt1 = "hello";
+$txt2 = "world";
+echo $txt1,$txt2;
+echo "<br>";
+echo $txt1."+".$txt2;
+echo "<br>";
+echo "<br>";
+echo strlen("福尔摩白");
+echo "<br>";
+echo mb_strlen("福尔摩白","utf-8");
+echo "<br>";
+echo strpos("福尔摩白","白");
+echo "<br>";
+echo mb_strpos("福尔摩白","白");
+echo "<br>";
 
+var_dump(intdiv(10,3));
+echo "<br>";
 
+$z1 = 10;
+echo $z1;
+echo "<br>";
+$z2 = 20;
+echo $z2;
+echo "<br>";
+$z2 +=$z1;
+echo $z2;
+echo "<br>";
+$z3 = "hello";
+$z4 = " world!!!";
+$z3 .=$z4;
+echo $z3;
+echo "<br>";
+var_dump(5==5);
+echo "<br>";
+var_dump(5===5);
+echo "<br>";
+var_dump(5 xor -1);
+echo "<br>";
+var_dump(5 || -12);
+echo "<br>";
+
+$x = array("a" => "red","b" => "green");
+$y = array("c" => "blue","d" => "yellow");
+$z = $x + $y;
+var_dump($z);
+echo "<br>";
+var_dump($x==$y);
+echo "<br>";
+var_dump($x===$y);
+echo "<br>";
+var_dump($x<>$y);
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+$test = 'mobai';
+$username=isset($test) ? $test : 'nobody';
+echo $username,PHP_EOL;
+echo "<br>";
+$test1 = "福尔摩白";
+$username1 = $test1 ?: "nobody";
+echo $username1,PHP_EOL;
+echo "<br>";
+$t = date("h:i:sa.d.m.Y");
+echo $t;
 ?>
 </body>
 </html>
